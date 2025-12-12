@@ -1,0 +1,20 @@
+# Backend (Java/Gradle)
+backend/.gradle/
+backend/build/
+backend/bin/
+backend/.idea/
+backend/*.iml
+backend/*.iws
+backend/out/
+backend/.DS_Store
+
+# Frontend (React)
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env
+frontend/npm-debug.log*
+
+# General
+*.log
+.DS_Store
