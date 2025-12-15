@@ -43,7 +43,6 @@ public class RequestItem {
         }
     }
 
-
     public void markAsFulfilled() {
         if (!onHold) {
             throw new IllegalStateException("Cannot fulfill item that is not on hold");
