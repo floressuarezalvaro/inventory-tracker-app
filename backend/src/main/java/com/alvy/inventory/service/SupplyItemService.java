@@ -34,7 +34,6 @@ public class SupplyItemService {
 
         existingItem.setName(updatedItem.getName());
         existingItem.setQuantity(updatedItem.getQuantity());
-        existingItem.setCategory(updatedItem.getCategory());
 
         return repository.save(existingItem);
     }
@@ -45,10 +44,6 @@ public class SupplyItemService {
             throw new RuntimeException("Supply item not found with id: " + id);
         }
         repository.deleteById(id);
-    }
-
-    public List<SupplyItem> getItemsByCategory(String category) {
-        return repository.findByCategory(category);
     }
 
     public List<SupplyItem> getLowStockItems(int threshold) {
@@ -62,7 +57,7 @@ public class SupplyItemService {
     public List<SupplyItem> getItemsWithHolds() {
         return repository.findByQuantityOnHoldGreaterThan(0);
     }
-    
+
     @Transactional
     public SupplyItem addQuantity(Long id, int amount) {
         SupplyItem item = getItemById(id);

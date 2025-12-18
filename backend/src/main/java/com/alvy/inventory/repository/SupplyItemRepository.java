@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface SupplyItemRepository extends JpaRepository<SupplyItem, Long> {
-    List<SupplyItem> findByCategory(String category);
 
     List<SupplyItem> findByQuantityLessThan(int threshold);
 
