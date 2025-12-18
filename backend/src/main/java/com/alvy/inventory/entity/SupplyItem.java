@@ -1,7 +1,6 @@
 package com.alvy.inventory.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +8,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "supply_items")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class SupplyItem {
 
     @Id
@@ -24,9 +22,6 @@ public class SupplyItem {
 
     @Column(nullable = false)
     private int quantityOnHold = 0;
-
-    @Column(nullable = false)
-    private String category;
 
     public int getQuantityAvailable() {
         return quantity - quantityOnHold;
